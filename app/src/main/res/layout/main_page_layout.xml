@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_gravity="top|start"
+        android:src="@drawable/blurry_driving"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <TextView
+    android:fontFamily="sans-serif"
+    android:layout_marginTop="25dp"
+    android:layout_gravity="center_horizontal"
+    android:textColor="@color/mainWhite"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    android:text="HOME PAGE"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/to_data_button"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="top|end"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="3dp"
+            android:alpha="0.8"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/mainWhite"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="DATA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginLeft="-10dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:rotation="90"
+            android:src="@drawable/back_arrow_white"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp">
+
+        <android.support.v7.widget.CardView
+            android:elevation="5dp"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:background="@color/cardview_light_background"
+            android:id="@+id/money_saved_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="20dp"
+            card_view:cardElevation="5dp">
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textSize="20sp"
+                    android:text="You've saved"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textColor="@color/colorSecondaryAccent"
+                    android:textSize="100sp"
+                    android:textStyle="bold"
+                    android:text="$250"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:elevation="2dp"
+            card_view:cardElevation="2dp"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:background="@color/cardview_light_background"
+            android:id="@+id/time_left_in_cycle_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.example.thugm.gosafe_v1.CycleDurationArc
+                    android:layout_margin="15dp"
+                    android:id="@+id/cycle_progress_arc"
+                    app:circleColor="@color/colorAccent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_marginTop="30dp"
+                        android:textColor="@color/colorSecondaryAccent"
+                        android:id="@+id/days_left"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textSize="80sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_marginBottom="25dp"
+                        android:textSize="20sp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:text="days left in cycle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </FrameLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</FrameLayout>
