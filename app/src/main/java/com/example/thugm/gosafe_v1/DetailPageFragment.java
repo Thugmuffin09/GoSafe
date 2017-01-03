@@ -49,32 +49,18 @@ public class DetailPageFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         //Dummy data generation.
-        ArrayList<String[]> dummyData = new ArrayList<>();
-        String[] temp = new String[2];
-        temp[0] = "Engine Temperature";
-        temp[1] = "154°C";
-        dummyData.add(temp.clone());
-        temp[0] = "Max RPMS";
-        temp[1] = "1200rpm";
-        dummyData.add(temp.clone());
-        temp[0] = "Max Speed";
-        temp[1] = "300kph";
-        dummyData.add(temp.clone());
-        temp[0] = "Max Speed";
-        temp[1] = "300kph";
-        dummyData.add(temp.clone());
-        temp[0] = "Max Speed";
-        temp[1] = "300kph";
-        dummyData.add(temp.clone());
-        temp[0] = "Max Speed";
-        temp[1] = "300kph";
-        dummyData.add(temp.clone());
-        temp[0] = "Max Speed";
-        temp[1] = "300kph";
-        dummyData.add(temp.clone());
-        temp[0] = "Max Speed";
-        temp[1] = "300kph";
-        dummyData.add(temp.clone());
+        ArrayList<CarData> dummyData = new ArrayList<>();
+        dummyData.add(new CarData("Engine Temperature", "154°C"));
+        dummyData.add(new CarData("Max RPMS",           "1200 RPM"));
+        dummyData.add(new CarData("Max Speed",          "300 KPH"));
+        dummyData.add(new CarData("Intake Air Temp",    "0°C", CarData.HealthTypes.Progressive, 20));
+        dummyData.add(new CarData("Oil Level",          "2021mL", CarData.HealthTypes.TwoStep, 1));
+        dummyData.add(new CarData("Gas Level",          "10000mL", CarData.HealthTypes.TwoStep, 0));
+        dummyData.add(new CarData("Air Filter",         "", CarData.HealthTypes.TwoStep, 2));
+        dummyData.add(new CarData("Something Else",     "300 KPH", CarData.HealthTypes.Boolean, 0));
+        dummyData.add(new CarData("Something Else",     "300 KPH", CarData.HealthTypes.Boolean, 1));
+
+
 
         mAdapter = new CustomRecyclerViewAdapter(dummyData);
         mRecyclerView.setAdapter(mAdapter);

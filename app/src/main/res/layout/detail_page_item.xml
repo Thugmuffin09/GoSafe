@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<FrameLayout xmlns:tools="http://schemas.android.com/tools"
     android:clipToPadding="false"
     android:padding="5dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -28,5 +28,25 @@
             android:id="@+id/detail_page_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/healthStatus"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressive"
+            android:layout_margin="10dp"
+            android:progress="10"
+            android:max="100"
+            android:visibility="visible"
+            tools:visibility="gone" />
     </LinearLayout>
 </FrameLayout>

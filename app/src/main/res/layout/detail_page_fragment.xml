@@ -48,7 +48,7 @@
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:text="HOME PAGE"
+            android:text="CAR DETAILS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </FrameLayout>
