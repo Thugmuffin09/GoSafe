@@ -27,7 +27,7 @@ import java.util.Date;
 public class CycleDurationArc extends View {
 
     private static final int JANUARY = 0;
-    private static final int FEBUARY = 1;
+    private static final int FEBRUARY = 1;
     private static final int MARCH = 2;
     private static final int APRIL = 3;
     private static final int MAY = 4;
@@ -50,6 +50,7 @@ public class CycleDurationArc extends View {
     private RectF mCircleInnerBounds;
 
     private Paint mCirclePaint;
+    private Paint mCircleOffPaint;
     private Paint mEraserPaint;
 
     private float mCircleSweepAngle;
@@ -81,6 +82,10 @@ public class CycleDurationArc extends View {
         mCirclePaint.setAntiAlias(true);
         mCirclePaint.setColor(circleColor);
 
+        mCircleOffPaint = new Paint();
+        mCircleOffPaint.setAntiAlias(true);
+        mCircleOffPaint.setColor(Color.LTGRAY);
+
         mEraserPaint = new Paint();
         mEraserPaint.setAntiAlias(true);
         mEraserPaint.setColor(Color.TRANSPARENT);
@@ -110,6 +115,7 @@ public class CycleDurationArc extends View {
         mCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
 
         if (mCircleSweepAngle > 0f) {
+            mCanvas.drawArc(mCircleOuterBounds, ARC_START_ANGLE, 180, true, mCircleOffPaint);
             mCanvas.drawArc(mCircleOuterBounds, ARC_START_ANGLE, mCircleSweepAngle, true, mCirclePaint);
             mCanvas.drawOval(mCircleInnerBounds, mEraserPaint);
         }
@@ -171,9 +177,27 @@ public class CycleDurationArc extends View {
     public static int daysInMonth(int month) {
         int year = Calendar.getInstance().get(Calendar.YEAR);
         Log.v("CUSTOMDEBUG", Integer.toString(year));
-        switch (month) {
+        if(month == FEBRUARY)
+        {
+            if (year % 400 == 0) {
+                return 29;
+            } else if (year % 100 == 0) {
+                return 28;
+            } else if (year % 4 == 0) {
+                return 29;
+            } else {
+                return 28;
+            }
+        }
+        else
+        {
+            // 0, 2, 4, 6 (july)
+            // 7, 9, 11 then return 31
+            return ((month < 7 && month % 2 == 0) || (month > 6 && month % 2 == 1)) ? 31 : 30;
+        }
+        /*switch (month) {
             case JANUARY: return 31;
-            case FEBUARY:
+            case FEBRUARY:
                 if (year % 400 == 0) {
                     return 29;
                 } else if (year % 100 == 0) {
@@ -193,6 +217,6 @@ public class CycleDurationArc extends View {
             case OCTOBER: return 31;
             case NOVEMBER: return 30;
             default: return 31;
-        }
+        }*/
     }
 }

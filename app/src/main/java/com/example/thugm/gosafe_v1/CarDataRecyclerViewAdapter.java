@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
  * Purpose: Adapter for grid to display OBDII data.
  */
 
-public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
+public class CarDataRecyclerViewAdapter extends RecyclerView.Adapter {
 
     private static final int MAX_WORDS_PER_LINE = 1;
     private static final int LABEL_INDEX = 0;
@@ -42,7 +42,7 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
         }
     }
 
-    public CustomRecyclerViewAdapter(ArrayList<CarData> data) { this.dataSet = data; }
+    public CarDataRecyclerViewAdapter(ArrayList<CarData> data) { this.dataSet = data; }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

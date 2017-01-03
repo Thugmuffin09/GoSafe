@@ -12,9 +12,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class CustomFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    private static final int NUM_PAGES  = 2;
+    private static final int NUM_PAGES  = 3;
     public static final int MAIN_PAGE = 0;
-    public static final int DATA_PAGE = 1;
+    public static final int NOTIFICATION_PAGE = 1;
+    public static final int DATA_PAGE = 2;
 
     public CustomFragmentPagerAdapter (FragmentManager fm) { super(fm); }
 
@@ -27,6 +28,7 @@ public class CustomFragmentPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case MAIN_PAGE: return new MainPageFragment();
+            case NOTIFICATION_PAGE: return new NotifPageFragment();
             default: return new DetailPageFragment();
         }
     }

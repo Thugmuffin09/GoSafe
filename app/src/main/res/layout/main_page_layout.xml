@@ -14,17 +14,17 @@
 
     <TextView
     android:fontFamily="sans-serif"
-    android:layout_marginTop="25dp"
+    android:layout_marginTop="60dp"
     android:layout_gravity="center_horizontal"
     android:textColor="@color/mainWhite"
     android:textStyle="bold"
     android:textSize="20sp"
-    android:text="HOME PAGE"
+    android:text="HOME"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:id="@+id/to_data_button"
+        android:id="@+id/to_notif_button"
         android:descendantFocusability="blocksDescendants"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
@@ -40,7 +40,7 @@
             android:textColor="@color/mainWhite"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="DATA"
+            android:text="NOTIFICATIONS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

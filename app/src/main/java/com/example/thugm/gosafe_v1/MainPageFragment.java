@@ -42,7 +42,7 @@ public class MainPageFragment extends Fragment {
         CycleDurationArc cycleProgressArc = (CycleDurationArc) view.findViewById(R.id.cycle_progress_arc);
         TextView daysLeft = (TextView) view.findViewById(R.id.days_left);
         TextView daysLeftInfo = (TextView) view.findViewById(R.id.days_left_info);
-        LinearLayout toDataButton = (LinearLayout) view.findViewById(R.id.to_data_button);
+        LinearLayout toDataButton = (LinearLayout) view.findViewById(R.id.to_notif_button);
 
         cycleProgressArc.start(dayOfMonth);
         daysLeft.setText(Integer.toString(CycleDurationArc.daysInMonth(dayOfMonth) - dayOfMonth));
@@ -50,7 +50,7 @@ public class MainPageFragment extends Fragment {
         toDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                baseCom.setPage(CustomFragmentPagerAdapter.DATA_PAGE);
+                baseCom.setPage(CustomFragmentPagerAdapter.NOTIFICATION_PAGE);
             }
         });
     }

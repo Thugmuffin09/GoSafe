@@ -1,6 +1,5 @@
 package com.example.thugm.gosafe_v1;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +60,7 @@ public class DetailPageFragment extends Fragment {
 
 
 
-        mAdapter = new CustomRecyclerViewAdapter(dummyData);
+        mAdapter = new CarDataRecyclerViewAdapter(dummyData);
         mRecyclerView.setAdapter(mAdapter);
         return view;
     }
@@ -71,7 +69,7 @@ public class DetailPageFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Button viewMapData = (Button) view.findViewById(R.id.map_button);
-        LinearLayout toHomeButton = (LinearLayout) view.findViewById(R.id.to_main_button);
+        LinearLayout toHomeButton = (LinearLayout) view.findViewById(R.id.to_notif_button);
 
         viewMapData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +81,7 @@ public class DetailPageFragment extends Fragment {
         toHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                baseCom.setPage(CustomFragmentPagerAdapter.MAIN_PAGE);
+                baseCom.setPage(CustomFragmentPagerAdapter.NOTIFICATION_PAGE);
             }
         });
     }
