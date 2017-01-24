@@ -3,4 +3,8 @@
     <string name="title_activity_map_page_fragment">Map</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_isgfkg">isgfkg</string>
+
+    <string name="title_activity_splash">Splash</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
