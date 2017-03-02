@@ -13,8 +13,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class CustomFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private static final int NUM_PAGES  = 3;
-    public static final int MAIN_PAGE = 0;
-    public static final int NOTIFICATION_PAGE = 1;
+    public static final int MAIN_PAGE = 1;
+    public static final int NOTIFICATION_PAGE = 0;
     public static final int DATA_PAGE = 2;
 
     public CustomFragmentPagerAdapter (FragmentManager fm) { super(fm); }

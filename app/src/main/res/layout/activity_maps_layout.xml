@@ -36,14 +36,29 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-    <TextView
-        android:fontFamily="sans-serif"
-        android:layout_marginTop="25dp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:text="MAP DATA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="MAP DATA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Showing your lastest route."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </FrameLayout>

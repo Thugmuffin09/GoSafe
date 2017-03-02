@@ -5,8 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.graphics.drawable.Drawable;
 import android.widget.TextView;
+import android.support.v4.content.ContextCompat;
 
 import java.util.ArrayList;
 
@@ -27,10 +30,12 @@ public class NotificationRecyclerViewAdapter extends RecyclerView.Adapter {
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
         public TextView content;
+        public ImageView icon;
         public RecyclerViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.notif_title);
             content = (TextView) view.findViewById(R.id.notif_content);
+            icon = (ImageView) view.findViewById(R.id.notif_icon);
         }
     }
 
@@ -48,6 +53,8 @@ public class NotificationRecyclerViewAdapter extends RecyclerView.Adapter {
         NotificationItem dataCouple = dataSet.get(position);
         ((RecyclerViewHolder)holder).title.setText(dataCouple.Title);
         ((RecyclerViewHolder)holder).content.setText(dataCouple.Content);
+        Drawable b = ContextCompat.getDrawable(BaseActivity.applicationContext, dataCouple.Icon);
+        ((RecyclerViewHolder)holder).icon.setImageDrawable(b);
     }
 
     @Override

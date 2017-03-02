@@ -28,6 +28,10 @@ public class CarDataRecyclerViewAdapter extends RecyclerView.Adapter {
 
     private ArrayList<CarData> dataSet;
 
+    private static final int Red = Color.rgb(204, 0, 0);
+    private static final int Green = Color.rgb(115,210,22);
+    private static final int Yellow = Color.rgb(237,212,0);
+
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
         public TextView dataLabel;
         public TextView value;
@@ -57,6 +61,8 @@ public class CarDataRecyclerViewAdapter extends RecyclerView.Adapter {
         RecyclerViewHolder holder_ = ((RecyclerViewHolder) holder);
         holder_.dataLabel.setText(dataCouple.Name);
         holder_.value.setText(dataCouple.Value);
+
+
         if(dataCouple.HealthType == CarData.HealthTypes.None)
         {
             holder_.progressive.setVisibility(View.GONE);
@@ -75,14 +81,14 @@ public class CarDataRecyclerViewAdapter extends RecyclerView.Adapter {
             if(dataCouple.HealthType == CarData.HealthTypes.Boolean)
             {
                 String healthText = dataCouple.Health == 0 ? "ERROR" : "Working Fine";
-                int textColor = dataCouple.Health == 0 ? Color.RED : Color.GREEN;
+                int textColor = dataCouple.Health == 0 ? Red : Green;
                 holder_.health.setText(healthText);
                 holder_.health.setTextColor(textColor);
             }
             else // twoStep
             {
                 String healthText = dataCouple.Health == 0 ? "ERROR" : (dataCouple.Health == 1 ? "Needs Attention" : "Working Fine");
-                int textColor = dataCouple.Health == 0 ? Color.RED : (dataCouple.Health == 1 ? Color.YELLOW : Color.GREEN);
+                int textColor = dataCouple.Health == 0 ? Red : (dataCouple.Health == 1 ? Yellow : Green);
                 holder_.health.setText(healthText);
                 holder_.health.setTextColor(textColor);
             }

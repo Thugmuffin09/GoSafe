@@ -69,19 +69,13 @@ public class DetailPageFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Button viewMapData = (Button) view.findViewById(R.id.map_button);
-        LinearLayout toHomeButton = (LinearLayout) view.findViewById(R.id.to_notif_button);
+
 
         viewMapData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), MapsActivity.class);
                 getContext().startActivity(intent);
-            }
-        });
-        toHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                baseCom.setPage(CustomFragmentPagerAdapter.NOTIFICATION_PAGE);
             }
         });
     }

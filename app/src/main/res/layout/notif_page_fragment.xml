@@ -4,84 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <FrameLayout
-        android:paddingBottom="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:id="@+id/to_main_button"
-            android:descendantFocusability="blocksDescendants"
-            android:layout_marginTop="25dp"
-            android:layout_marginStart="20dp"
-            android:layout_gravity="top|start"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_marginEnd="-10dp"
-                android:scaleX="0.5"
-                android:scaleY="0.5"
-                android:rotation="90"
-                android:src="@drawable/back_arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
-
-            <TextView
-                android:padding="3dp"
-                android:alpha="0.8"
-                android:fontFamily="sans-serif"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:text="HOME"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/to_details_button"
-            android:descendantFocusability="blocksDescendants"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="20dp"
-            android:layout_gravity="top|end"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-
-
-            <TextView
-                android:padding="3dp"
-                android:alpha="0.8"
-                android:fontFamily="sans-serif"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:text="DETAILS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:layout_marginLeft="-10dp"
-                android:scaleX="0.5"
-                android:scaleY="0.5"
-                android:rotation="-90"
-                android:src="@drawable/back_arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-        <TextView
-            android:fontFamily="sans-serif"
-            android:layout_marginTop="60dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="NOTIFICATIONS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/notif_recyclerview"

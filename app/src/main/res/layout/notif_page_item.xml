@@ -5,33 +5,47 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="180dp">
-
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
+
+        android:orientation="horizontal"
         android:elevation="5dp"
         android:background="@color/mainWhite"
         android:layout_width="match_parent"
         android:layout_height="77dp">
 
-        <TextView
-            android:textSize="20sp"
-            android:text="100°C"
-            android:id="@+id/notif_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="77dp"
+            android:padding="15dp"
+            android:layout_height="match_parent"
+            android:id="@+id/notif_icon"
+            android:src="@drawable/ic_notifications"/>
 
-        <TextView
-            android:text="Engine Temperature"
-            android:id="@+id/notif_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/mainWhite"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="5dp" />
+            android:layout_height="match_parent">
 
+            <TextView
+                android:textSize="20sp"
+                android:text="100°C"
+                android:id="@+id/notif_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="Engine Temperature"
+                android:id="@+id/notif_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>

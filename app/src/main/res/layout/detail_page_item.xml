@@ -19,7 +19,8 @@
             android:text="Engine Temperature"
             android:id="@+id/detail_page_data_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
 
         <TextView
             android:textSize="20sp"
@@ -39,7 +40,7 @@
             android:textStyle="normal|bold" />
 
         <ProgressBar
-            style="?android:attr/progressBarStyleHorizontal"
+            style="@android:style/Widget.Material.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/progressive"
@@ -47,6 +48,7 @@
             android:progress="10"
             android:max="100"
             android:visibility="visible"
-            tools:visibility="gone" />
+            tools:visibility="gone"
+            />
     </LinearLayout>
 </FrameLayout>

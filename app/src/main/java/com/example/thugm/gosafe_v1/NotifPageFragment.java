@@ -16,9 +16,9 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 /**
- * Author: Saimir Sulaj
- * Date: December 27, 2016
- * Purpose: Fragment for detail page, shows data read from OBDII sensor.
+ * Author: Felix Guo
+ * Date: March 1, 2017
+ * Purpose: Fragment for notification page, shows notifications for user
  */
 
 public class NotifPageFragment extends Fragment {
@@ -48,7 +48,8 @@ public class NotifPageFragment extends Fragment {
 
         //Dummy data generation.
         ArrayList<NotificationItem> dummyData = new ArrayList<>();
-        dummyData.add(new NotificationItem("TIME FOR AN OIL CHANGE", "EYY LMAO"));
+        dummyData.add(new NotificationItem("Time for an oil change!",
+                "Our readings indicate your last oil change was over 2 months ago!", R.drawable.ic_oil_change));
 
 
         mAdapter = new NotificationRecyclerViewAdapter(dummyData);
@@ -60,21 +61,7 @@ public class NotifPageFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        LinearLayout toHomeButton = (LinearLayout) view.findViewById(R.id.to_main_button);
-        LinearLayout toDetailsButton = (LinearLayout) view.findViewById(R.id.to_details_button);
 
 
-        toHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                baseCom.setPage(CustomFragmentPagerAdapter.MAIN_PAGE);
-            }
-        });
-        toDetailsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                baseCom.setPage(CustomFragmentPagerAdapter.DATA_PAGE);
-            }
-        });
     }
 }
